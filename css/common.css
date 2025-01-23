@@ -1,0 +1,187 @@
+:root {
+    --bg-color: #E9DED4;
+    --dark: #313131;
+    --darker: #1F1F1F;
+    --red: #F54932;
+    --blue: #3057A2;
+    --gold: #FBCE51;
+    --small-font-size: 16px;
+    --default-font-size: 20px;
+    --golos-text-font: "Golos Text";
+    --button-transition: background-color .3s ease, color 1s ease;
+    --thin: 100;
+    --extra-light: 200;
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semibold: 600;
+    --bold: 700;
+    --extra-bold: 800;
+    --black: 900;
+    --container-max-width: 1222px;
+    --container-padding: 20px;
+    --marquee-height: 60px;
+    --slider-arrow-size: 44px;
+}
+body {
+    overflow-x: hidden;
+    font-size: var(--default-font-size);
+    font-family: "Merriweather", serif;
+    color: #313131;
+    width: 100%;
+}
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+.title {
+    font-size: 54px;
+    line-height: 120%;
+    text-transform: uppercase;
+    white-space: pre-line;
+    font-weight: 400;
+}
+.title__hint {
+    color: var(--blue);
+    font-size: var(--default-font-size);
+    font-family: var(--golos-text-font), serif;
+    text-transform: none;
+    line-height: 120%;
+    display: inline-block;
+    margin-left: 21px;
+}
+.title_colorized {
+    font-size: 36px;
+    line-height: 135%;
+    font-weight: 400;
+    text-transform: uppercase;
+    white-space: pre-line;
+}
+.title_colorized__highlight, .title_colorized_highlight {
+    color: var(--red);
+    font-weight: var(--bold);
+}
+
+button {
+    cursor: pointer;
+}
+.slider {
+    overflow: hidden;
+}
+.slider__inner {
+    transition: transform .7s;
+    width: fit-content;
+}
+.slider__inner_without-animation {
+    transition: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
+.controls__arrows {
+    display: flex;
+    align-items: center;
+}
+.controls__arrow {
+    width: var(--slider-arrow-size);
+    height: var(--slider-arrow-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    outline: 0;
+    border: none;
+    background: var(--dark);
+    position: relative;
+    transition: var(--button-transition);
+}
+.controls__arrow:hover {
+    background: var(--gold);
+}
+.controls__arrow:disabled {
+    background: #D6D6D6;
+    cursor: not-allowed;
+}
+.controls__arrow::after {
+    content: url("../assets/icons/arrow.svg");
+    position: absolute;
+    width: 12px;
+    height: 22px;
+    transform: translate(-1px, -1px);
+}
+.controls__arrow_next::after {
+    transform: rotate(180deg) translate(-1px, -1px);
+}
+.controls__pagination {
+    font-size: var(--small-font-size);
+    font-family: var(--golos-text-font), serif;
+    width: calc(var(--controls-width) - var(--slider-arrow-size) * 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls__pagination_dots {
+    gap: 6px;
+}
+.controls__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    transition: background-color .7s;
+    background-color: #D9D9D9;
+}
+.controls__dot_active {
+    background-color: #313131;
+}
+.controls__to {
+    opacity: .6;
+}
+.controls__arrows_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1222px) {
+    :root {
+        --container-max-width: calc(100vw - var(--container-padding) * 2);
+    }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 601px) {
+    .title_colorized {
+        white-space: initial;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --marquee-height: 38px;
+        --slider-arrow-size: 36px;
+    }
+    .title {
+        font-size: 36px;
+        line-height: 110%;
+    }
+    .title__hint {
+        margin: 12px 0 0;
+        font-size: 18px;
+        width: 100%;
+    }
+    .title__hint {
+        white-space: normal;
+    }
+    .title_colorized {
+        font-size: 28px;
+    }
+    .title_colorized__highlight, .title_colorized_highlight {
+        white-space: normal;
+    }
+    .controls__arrows_mobile {
+        display: flex;
+    }
+    .controls__arrows {
+        justify-content: center;
+    }
+}

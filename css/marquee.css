@@ -1,0 +1,54 @@
+/* Это файл подключается внутри shadow dom и не используется в общей сборке css */
+
+.marquee {
+    height: var(--marquee-height);
+    background: var(--red);
+    width: 100vw;
+    position: relative;
+    z-index: 40;
+}
+.marquee__motion {
+    animation: marquee 15s linear infinite;
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+}
+.marquee__text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+}
+.marquee__text-wrapper::after {
+    content: "";
+    height: 6px;
+    width: 6px;
+    background: #fff;
+    border-radius: 50%;
+}
+.marquee__text {
+    color: #ffffff;
+    width: fit-content;
+    white-space: nowrap;
+    font-size: 22px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(-120vw);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .marquee__text {
+        font-size: 16px;
+    }
+}

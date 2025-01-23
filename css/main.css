@@ -1,0 +1,174 @@
+.main {
+    position: relative;
+    mix-blend-mode: multiply;
+    background-size: cover;
+    height: calc(100vh - var(--marquee-height));
+    max-height: 700px;
+    padding-top: 26px;
+}
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: .25;
+    background: url("../assets/images/filter.png") no-repeat center center;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+.main::after {
+    content: url("../assets/images/chess.png");
+    background: var(--bg-color);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+.main__content {
+    margin-top: 62px;
+    max-width: 542px;
+}
+.main__headline {
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 110%;
+    font-weight: 400;
+}
+.main__headline_gap-1 {
+    margin-left: 91px;
+}
+.main__headline_gap-2 {
+    margin-left: 33px;
+}
+.main__description {
+    text-align: center;
+    font-size: 18px;
+    line-height: 130%;
+    margin: 24px 0 40px 0;
+    font-family: var(--golos-text-font), serif;
+}
+.main__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+.main__button {
+    font-family: var(--golos-text-font), serif;
+    font-weight: var(--medium);
+    font-size: var(--small-font-size);
+    background: transparent;
+    border: 2px solid var(--darker);
+    padding: 12px 49px;
+    border-radius: 66px;
+    flex: 1;
+    line-height: 130%;
+    transition: var(--button-transition);
+    white-space: pre-line;
+}
+.main__button:hover {
+    background: var(--darker);
+    color: #fff;
+}
+.main__button_primary {
+    background: var(--darker);
+    color: #fff;
+    border: none;
+}
+.main__button_primary:hover {
+    background: var(--gold);
+    color: var(--darker);
+}
+.main__button_secondary {
+    color: var(--darker);
+}
+
+@media screen and (min-width: 2000px) {
+    .main::after {
+        padding-left: 20%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .main::after {
+        left: -20%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main::after {
+        left: -70%;
+    }
+    .main__button_secondary {
+        background: rgba(255, 255, 255, .9);
+        border: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main::after {
+        left: -100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        min-height: 425px;
+        max-height: 774px;
+        padding-top: 18px;
+    }
+    .main::after {
+        background: url("../assets/images/chess-mobile.png") bottom center no-repeat var(--bg-color);
+        background-size: 100%;
+        content: "";
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: -18px;
+    }
+    .main__logo {
+        width: 213px;
+        height: 32px
+    }
+    .main__content {
+        margin-top: 40px;
+    }
+    .main__headline_gap-1 {
+        margin-left: 64px;
+    }
+    .main__headline_gap-2 {
+        margin-left: 30px;
+    }
+    .main__description {
+        margin: 27px 0 27px 0;
+    }
+    .main__headline {
+        font-size: 36px;
+    }
+    .main__description {
+        text-align: left;
+    }
+    .main__buttons {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .main__button {
+        white-space: unset;
+        padding: 18px 43px;
+        line-height: 16px;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .main__headline_gap-1 {
+        margin-left: 40px;
+    }
+    .main__headline_gap-2 {
+        margin-left: 20px;
+    }
+}

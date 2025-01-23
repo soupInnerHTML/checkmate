@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Four Knights Club | Tournament</title>
+    <link rel="icon" href="assets/icons/favicon.svg"> <!-- Да, я знаю, что это пешка. Просто так красивее -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hankchizljaw/modern-css-reset/dist/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script defer src="js/index.js" type="module"></script>
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <img class="main__logo" src="assets/icons/logo.svg" alt="logo">
+
+            <section class="main__content">
+                <h2 class="main__headline">Превратите</h2>
+                <h2 class="main__headline">уездный город</h2>
+                <h2 class="main__headline main__headline_gap-1">в столицу</h2>
+                <h2 class="main__headline main__headline_gap-2">земного шара</h2>
+
+                <p class="main__description">Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам</p>
+
+                <div class="main__buttons">
+                    <button class="main__button main__button_primary" data-anchor="#support">Поддержать шахматную мысль</button>
+                    <button class="main__button  main__button_secondary" data-anchor="#members-slider">Подробнее
+                        о турнире</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <custom-marquee></custom-marquee>
+
+    <section class="support" id="support">
+        <div class="container">
+            <div class="lecture">
+                <span  class="lecture__title_colorized title_colorized">Чтобы поддержать
+                    Международный васюкинский
+                турнир </span>
+                <span  class="lecture__title_colorized title_colorized">посетите лекцию на тему:</span>
+                <span class="lecture__title_colorized title_colorized title_colorized_highlight">
+                    «Плодотворная дебютная идея»</span>
+
+                <img class="lecture__image" src="assets/images/chess-players.png" alt="Лекция">
+            </div>
+
+            <div class="game">
+                <img src="assets/images/game.png" class="game__image" alt="Игра">
+
+                <div class="game__description">
+                    <h2 class="title_colorized">и Сеанс <span class="title_colorized__highlight">одновременной игры
+                        в шахматы на 160 досках</span>
+                        гроссмейстера О. Бендера
+                    </h2>
+
+                    <table class="support__table table">
+                        <tbody>
+                            <tr class="table__row">
+                                <td class="table__key">
+                                    Место проведения:
+                                </td>
+                                <td class="table__value">
+                                    Клуб «Картонажник»
+                                </td>
+                            </tr>
+
+                            <tr class="table__row">
+                                <td class="table__key">
+                                    Дата и время мероприятия:
+                                </td>
+                                <td class="table__value">
+                                    22 июня 1927 г. в 18:00
+                                </td>
+                            </tr>
+
+                            <tr class="table__row">
+                                <td class="table__key">
+                                    Стоимость входных билетов:
+                                </td>
+                                <td class="table__value">
+                                    20 коп.
+                                </td>
+                            </tr>
+
+                            <tr class="table__row table__row_mobile-inline">
+                                <td class="table__key">
+                                    Плата за игру:
+                                </td>
+                                <td class="table__value">
+                                    50 коп.
+                                </td>
+                            </tr>
+
+                            <tr class="table__row">
+                                <td class="table__key">
+                                    Взнос на телеграммы:
+                                </td>
+                                <td class="table__value table__value_with-old">
+                                    <del>100 руб</del>
+                                    21 руб. 16 коп.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="support__description">По всем вопросам обращаться
+                        в администрацию к К. Михельсону</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roadmap" id="roadmap-slider">
+        <div class="container">
+            <h2 class="title">Этапы преображения
+                Васюков<span class="title__hint">Будущие источники
+                    обогащения васюкинцев</span></h2>
+            <div class="slider">
+                <div class="roadmap__cards slider__inner">
+                    <div class="milestone milestone_mobile-plane">
+                        <div class="milestone__number">1</div>
+                        <p class="milestone__text">Строительство железнодорожной магистрали Москва-Васюки</p>
+                    </div>
+                    <div class="milestone">
+                        <div class="milestone__number">2</div>
+                        <p class="milestone__text">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
+                    </div>
+                    <div class="milestone">
+                        <div class="milestone__number">3</div>
+                        <p class="milestone__text">Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
+                    </div>
+                    <div class="milestone">
+                        <div class="milestone__number">4</div>
+                        <p class="milestone__text">Строительство дворца
+                            для турнира</p>
+                    </div>
+                    <div class="milestone">
+                        <div class="milestone__number">5</div>
+                        <p class="milestone__text">Размещение гаражей
+                            для гостевого
+                            автотранспорта</p>
+                    </div>
+                    <div class="milestone">
+                        <div class="milestone__number">6</div>
+                        <p class="milestone__text">Постройка сверхмощной радиостанции для передачи всему миру сенсационных
+                            результатов</p>
+                    </div>
+                    <div class="milestone milestone_desktop-plane">
+                        <div class="milestone__number">7</div>
+                        <p class="milestone__text">Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls__arrows controls__arrows_mobile">
+                <button class="controls__arrow controls__arrow_prev" disabled></button>
+                <div class="controls__pagination controls__pagination_dots"></div>
+                <button class="controls__arrow controls__arrow_next"></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="members" id="members-slider">
+        <div class="container">
+            <div class="members__inner">
+                <h2 class="title">Участники
+                    турнира</h2>
+                <div class="controls">
+                    <div class="controls__arrows">
+                        <button class="controls__arrow controls__arrow_prev"></button>
+                        <div class="controls__pagination">
+                            <span class="controls__from"></span>
+                            &nbsp;
+                            <span class="controls__to"></span>
+                        </div>
+                        <button class="controls__arrow controls__arrow_next"></button>
+                    </div>
+                </div>
+
+                <div class="slider">
+                    <div class="slider__inner">
+                        <div class="member">
+                            <img class="member__photo" src="assets/images/member.png" alt="Игрок">
+                            <p class="member__name">Хозе-Рауль Капабланка</p>
+                            <p class="member__rank">Чемпион мира по шахматам</p>
+                            <button class="member__more">Подробнее</button>
+                        </div>
+                        <div class="member">
+                            <img class="member__photo" src="assets/images/member.png" alt="Игрок">
+                            <p class="member__name">Эммануил Ласкер</p>
+                            <p class="member__rank">Чемпион мира по шахматам</p>
+                            <button class="member__more">Подробнее</button>
+                        </div>
+                        <div class="member">
+                            <img class="member__photo" src="assets/images/member.png" alt="Игрок">
+                            <p class="member__name">Александр Алехин</p>
+                            <p class="member__rank">Чемпион мира по шахматам</p>
+                            <button class="member__more">Подробнее</button>
+                        </div>
+                        <div class="member">
+                            <img class="member__photo" src="assets/images/member.png" alt="Игрок">
+                            <p class="member__name">Арон Нимцович</p>
+                            <p class="member__rank">Чемпион мира по шахматам</p>
+                            <button class="member__more">Подробнее</button>
+                        </div>
+                        <div class="member">
+                            <img class="member__photo" src="assets/images/member.png" alt="Игрок">
+                            <p class="member__name">Рихард Рети</p>
+                            <p class="member__rank">Чемпион мира по шахматам</p>
+                            <button class="member__more">Подробнее</button>
+                        </div>
+                        <div class="member">
+                            <img class="member__photo" src="assets/images/member.png" alt="Игрок">
+                            <p class="member__name">Остап Бендер</p>
+                            <p class="member__rank">Гроссмейстер</p>
+                            <button class="member__more">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <custom-marquee></custom-marquee>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__note">Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- TODO fix -->
+<!-- На IOS (Safari, реальное устройство) присутствует горизонтальный скролл  -->
+<!-- Разная высота карточек milestone на мобилках ~400px  -->

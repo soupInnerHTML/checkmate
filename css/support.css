@@ -1,0 +1,189 @@
+.support {
+    margin: 106px 0 194px 0;
+}
+.lecture {
+    position: relative;
+}
+.lecture__image {
+    position: absolute;
+    right: 0;
+    top: -26px;
+}
+
+.game {
+    margin-top: 97px;
+    display: flex;
+    gap: 17px;
+}
+.game__image {
+    margin-left: -27px;
+    margin-top: -20px;
+    max-width: 530px;
+    width: 100%;
+    max-height: 555px;
+    height: 100%;
+}
+.game__description {
+    max-width: 704px;
+    width: 100%;
+}
+
+.support__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 60px;
+    font-family: var(--golos-text-font), serif;
+}
+
+.table__key, .table__value {
+    border-bottom: 2px solid #D0D0D0;
+    padding: 16px 0;
+    line-height: 112%;
+}
+.table__value {
+    padding: 16px;
+    font-weight: var(--semibold);
+}
+.support__table .table__value_with-old {
+    display: flex;
+    gap: 20px;
+}
+.table__value_with-old del {
+    text-decoration-color: var(--red);
+}
+.table__key {
+    width: 43.35%;
+    opacity: .7;
+    border-right: 2px solid #D0D0D0;
+}
+.table__row:first-child .table__key, .table__row:first-child .table__value {
+    padding-top: 0;
+}
+.table__row:last-child .table__key, .table__row:last-child .table__value {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.support__description {
+    color: #3057A2;
+    font-family: var(--golos-text-font), serif;
+    margin-top: 48px;
+    line-height: 120%;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+    .lecture {
+        width: 60%;
+        position: initial;
+    }
+    .lecture__image {
+        top: 0;
+        bottom: 0;
+    }
+    .support .container {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 1028px) and (min-width: 601px) {
+    .support__table .table__value_with-old {
+        gap: 7px;
+    }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 601px) {
+    .game__image {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .lecture {
+        display: flex;
+        flex-direction: column;
+    }
+    .lecture__title_colorized:nth-of-type(1) {
+        order: 1;
+    }
+    .lecture__image {
+        margin: 24px auto;
+        position: initial;
+        order: 2;
+    }
+    .lecture__title_colorized:nth-of-type(2) {
+        order: 3;
+    }
+    .lecture__title_colorized.title_colorized_highlight  {
+        order: 4;
+        white-space: initial;
+    }
+    .game {
+        flex-direction: column;
+    }
+    .game__description {
+        max-width: 100%;
+    }
+    .support__table {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .table__key, .table__value {
+        width: 100%;
+        display: block;
+        line-height: 114%;
+    }
+    .support__table .table__row .table__key {
+        padding: 16px 0 12px 0;
+        border: 0;
+    }
+    .table__value {
+        padding: 0 0 16px 0;
+    }
+    .table__row {
+        display: block;
+    }
+    .table__row_mobile-inline {
+        display: flex;
+        align-items: center;
+    }
+    .support__table .table__row_mobile-inline {
+        border-bottom: 2px solid #D0D0D0;
+        padding: 17px 0;
+        gap: 14px;
+    }
+    .support__table .table__row_mobile-inline .table__key, .support__table .table__row_mobile-inline .table__value  {
+        border-bottom: 0;
+        width: fit-content;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .support {
+        margin: 48px 0 120px 0;
+    }
+    .game {
+        margin-top: 38px;
+    }
+    .game__image {
+        max-width: 100vw;
+        width: 100vw;
+        margin-left: calc(var(--container-padding) * -0.8);
+        margin-top: 0;
+    }
+    .game__description {
+        margin-top: 8px;
+    }
+    .support__description {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .support__description {
+        white-space: pre-line;
+    }
+}
