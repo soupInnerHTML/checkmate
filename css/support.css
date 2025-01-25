@@ -18,10 +18,21 @@
 .game__image {
     margin-left: -27px;
     margin-top: -20px;
-    max-width: 530px;
-    width: 100%;
-    max-height: 555px;
-    height: 100%;
+    width: 530px;
+    height: 555px;
+    background: url("../assets/images/game.jpg") no-repeat #fff;
+    background-size: contain;
+    position: relative;
+}
+.game__image::before {
+    background: url("../assets/images/filter.jpg");
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mix-blend-mode: color-burn;
 }
 .game__description {
     max-width: 704px;
@@ -174,11 +185,17 @@
         margin-top: 0;
     }
     .game__description {
-        margin-top: 8px;
+        margin-top: 10px;
     }
     .support__description {
         font-size: 18px;
         margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .game__image {
+        height: 397px;
     }
 }
 

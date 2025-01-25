@@ -1,10 +1,11 @@
 .main {
+    --pawn-shift: 50px;
     position: relative;
-    mix-blend-mode: multiply;
-    background-size: cover;
     height: calc(100vh - var(--marquee-height));
     max-height: 700px;
     padding-top: 26px;
+    background-color: var(--bg-color);
+    mix-blend-mode: multiply;
 }
 .main::before {
     content: "";
@@ -14,20 +15,26 @@
     left: 0;
     right: 0;
     z-index: -1;
-    opacity: .25;
-    background: url("../assets/images/filter.png") no-repeat center center;
+    background:
+            url("../assets/images/filter.jpg"),
+            url("../assets/images/main-bg.jpg");
     background-size: cover;
-    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-blend-mode: color-burn;
 }
 .main::after {
-    content: url("../assets/images/chess.png");
-    background: var(--bg-color);
+    content: "";
+    background:
+            url("../assets/images/knight.png") no-repeat 73% 100%,
+            url("../assets/images/pawn.png") no-repeat 100% calc(100% - 20px);
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
-    left: 0;
-    mix-blend-mode: multiply;
+    right: calc(50% + var(--pawn-shift));
+    left: 50%;
+    transform: translateX(calc(-50%));
+    width: calc(var(--container-max-width) + var(--pawn-shift));
     z-index: -1;
 }
 .main__content {
@@ -89,47 +96,50 @@
 }
 
 @media screen and (min-width: 2000px) {
-    .main::after {
-        padding-left: 20%;
+    .main {
+        background: url("../assets/images/filter.jpg") var(--bg-color);
+        background-blend-mode: color-burn;
+    }
+    .main::before {
+        background-size: 1920px auto;
     }
 }
 
-@media screen and (max-width: 1440px) {
-    .main::after {
-        left: -20%;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .main::after {
-        left: -70%;
-    }
+@media screen and (max-width: 1122px) {
     .main__button_secondary {
         background: rgba(255, 255, 255, .9);
         border: none;
     }
+    .main {
+        --pawn-shift: 0px;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 940px) {
     .main::after {
-        left: -100%;
+        background: url("../assets/images/knight.png") no-repeat right bottom;
     }
 }
 
 @media screen and (max-width: 600px) {
+    .main::after {
+        background-position: bottom center;
+        width: 100%;
+        right: 0;
+        left: 0;
+        transform: initial;
+        background-size: 120px;
+    }
+    .main::before {
+        background-position: bottom center, 81% 100%;
+        background-size: auto 50%;
+    }
     .main {
+        background: url("../assets/images/filter.jpg") var(--bg-color);
+        background-blend-mode: color-burn;
         min-height: 425px;
         max-height: 774px;
         padding-top: 18px;
-    }
-    .main::after {
-        background: url("../assets/images/chess-mobile.png") bottom center no-repeat var(--bg-color);
-        background-size: 100%;
-        content: "";
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: -18px;
     }
     .main__logo {
         width: 213px;
@@ -160,7 +170,18 @@
     .main__button {
         white-space: unset;
         padding: 18px 43px;
-        line-height: 16px;
+        line-height: 12px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .main__description {
+        white-space: pre-line;
+    }
+}
+@media screen and (max-width: 400px) {
+    .main::before {
+        background-position: bottom center, 75% 100%;
+        /*background-size: auto 50%;*/
     }
 }
 

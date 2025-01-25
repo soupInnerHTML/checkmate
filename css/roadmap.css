@@ -22,12 +22,13 @@
     padding: 20px;
     font-family: var(--golos-text-font), serif;
     min-height: 112px;
-    background: rgb(239,216, 189);
+    background: rgb(253, 234, 200);
     mix-blend-mode: multiply;
 }
 .milestone::after {
     content: "";
-    background: url("../assets/images/filter.png") no-repeat;
+    background: url("../assets/images/filter.jpg");
+    opacity: .4;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -35,7 +36,6 @@
     left: 0;
     right: 0;
     z-index: -1;
-    opacity: .3;
 }
 .milestone_desktop-plane::before {
     content: url("../assets/images/plane.png");
@@ -70,6 +70,7 @@
     width: var(--milestone-text-width);
     line-height: 120%;
     white-space: pre-line;
+    font-weight: var(--medium);
 }
 
 @media screen and (max-width: 1223px) {
