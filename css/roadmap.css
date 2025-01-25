@@ -1,157 +1,187 @@
 .roadmap {
-    --controls-width: 178px;
+  --controls-width: 178px;
 }
 .roadmap__cards {
-    margin-top: 54px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    grid-template-areas:
+  margin-top: 54px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-template-areas:
     "card1 card2 card3"
     "card4 card5 card3"
     "card6 card7 card7";
-    --milestone-number-size: 36px;
-    --milestone-gap: 16px;
-    --milestone-text-width: calc(100% - var(--milestone-number-size) - var(--milestone-gap));
+  --milestone-number-size: 36px;
+  --milestone-gap: 16px;
+  --milestone-text-width: calc(
+    100% - var(--milestone-number-size) - var(--milestone-gap)
+  );
 }
 
 .milestone {
-    position: relative;
-    display: flex;
-    gap: var(--milestone-gap);
-    padding: 20px;
-    font-family: var(--golos-text-font), serif;
-    min-height: 112px;
-    background: rgb(239,216, 189);
-    mix-blend-mode: multiply;
+  position: relative;
+  display: flex;
+  gap: var(--milestone-gap);
+  padding: 20px;
+  font-family: var(--golos-text-font), serif;
+  min-height: 112px;
+  /* не стал использовать filter.jpg + blend-mode из-за отображения карточек на мобильном */
+  background: url("../assets/images/card-bg.jpg") var(--bg-color);
+  background-size: cover;
 }
-.milestone::after {
-    content: "";
-    background: url("../assets/images/filter.png") no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    opacity: .3;
-}
-.milestone_desktop-plane::before {
-    content: url("../assets/images/plane.png");
-    position: absolute;
-    right: -62px;
-    top: -97px;
+.milestone_plane_desktop::before {
+  content: url("../assets/images/plane.png");
+  position: absolute;
+  right: -62px;
+  top: -97px;
 }
 
-.milestone_desktop-plane .milestone__text {
-    width: 58%;
+.milestone_plane_desktop .milestone__text {
+  width: 58%;
 }
 
-.milestone:nth-child(1) { grid-area: card1; }
-.milestone:nth-child(2) { grid-area: card2; }
-.milestone:nth-child(3) { grid-area: card3; }
-.milestone:nth-child(4) { grid-area: card4; }
-.milestone:nth-child(5) { grid-area: card5; }
-.milestone:nth-child(6) { grid-area: card6; }
-.milestone:nth-child(7) { grid-area: card7; }
+.milestone:nth-child(1) {
+  grid-area: card1;
+}
+.milestone:nth-child(2) {
+  grid-area: card2;
+}
+.milestone:nth-child(3) {
+  grid-area: card3;
+}
+.milestone:nth-child(4) {
+  grid-area: card4;
+}
+.milestone:nth-child(5) {
+  grid-area: card5;
+}
+.milestone:nth-child(6) {
+  grid-area: card6;
+}
+.milestone:nth-child(7) {
+  grid-area: card7;
+}
 
 .milestone__number {
-    background: #fff;
-    width: var(--milestone-number-size);
-    height: var(--milestone-number-size);
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
+  background: #fff;
+  width: var(--milestone-number-size);
+  height: var(--milestone-number-size);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
 }
 .milestone__text {
-    width: var(--milestone-text-width);
-    line-height: 120%;
-    white-space: pre-line;
+  width: var(--milestone-text-width);
+  line-height: var(--default-line-height);
+  white-space: pre-line; /* использую для pixel perfect */
+  font-weight: var(--medium);
 }
 
 @media screen and (max-width: 1223px) {
-    .roadmap__card_plane::before {
-        transform: scale(.6);
-        right: -100px;
-    }
+  .milestone_plane_desktop::before {
+    transform: scale(0.6);
+    right: -100px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .roadmap__cards {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas:
-        "card1 card2"
-        "card3 card4"
-        "card3 card5"
-        "card6 card6"
-        "card7 card7";
-    }
+  .roadmap__cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card3 card5"
+      "card6 card6"
+      "card7 card7";
+  }
 }
 
 @media screen and (min-width: 600px) {
-    .roadmap .slider {
-        overflow: visible;
-    }
+  .roadmap .slider {
+    overflow: visible;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .roadmap__cards {
-        margin: 148px 0 28px 0;
-        row-gap: 0;
-        grid-template-areas:
-        "card1 card3 card4 card6 card7"
-        "card2 card3 card5 card6 card7"
-    }
-    .milestone:nth-child(1) {
-        padding-bottom: 0;
-    }
-    .milestone_mobile-plane::before {
-        content: "";
-        background: url("../assets/images/plane.png") no-repeat center center;
-        background-size: contain;
-        position: absolute;
-        top: -160px;
-        left: 15%;
-        right: 15%;
-        bottom: 0;
-    }
-    .milestone:nth-child(2) {
-       padding: 12px 20px 0;
-        max-height: 134px;
-    }
-    .milestone:nth-child(4) {
-        padding-bottom: 0;
-    }
-    .milestone {
-        width: var(--container-max-width);
-        padding: 62px 20px;
-        max-height: 300px;
-    }
-    .milestone__text {
-        font-size: 18px;
-    }
-    .milestone_desktop-plane::before {
-        content: "";
-    }
-    .milestone_desktop-plane .milestone__text {
-        width: var(--milestone-text-width);
-    }
+  .roadmap__cards {
+    margin: 148px 0 28px 0;
+    row-gap: 0;
+    place-items: stretch;
+    grid-template-areas:
+      "card1 card3 card4 card6 card7"
+      "card2 card3 card5 card6 card7";
+  }
+  .milestone_plane_mobile::before {
+    content: "";
+    background: url("../assets/images/plane.png") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: -160px;
+    left: 15%;
+    right: 15%;
+    bottom: 0;
+  }
+  .milestone__text {
+    white-space: normal;
+  }
+  .milestone:nth-child(1) {
+    padding-bottom: 16px;
+  }
+  .milestone:nth-child(2) {
+    padding: 12px 20px 0;
+    max-height: 134px;
+  }
+  .milestone:nth-child(4) {
+    padding-bottom: 0;
+  }
+  .milestone:nth-child(5) {
+    padding-top: 5px;
+  }
+  .milestone {
+    width: var(--container-max-width);
+    padding: 62px 20px;
+    max-height: 300px;
+  }
+  .milestone__text {
+    font-size: 18px;
+  }
+  .milestone_plane_desktop::before {
+    content: "";
+  }
+  .milestone_plane_desktop .milestone__text {
+    width: var(--milestone-text-width);
+  }
 }
 
 @media screen and (max-width: 425px) {
-    .milestone_mobile-plane::before {
-        top: -221px;
-        left: 0;
-        right: 0;
-    }
+  .milestone_plane_mobile::before {
+    top: -221px;
+    left: 0;
+    right: 0;
+  }
+  .milestone:nth-child(1) {
+    padding-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 375px) {
-    .milestone:nth-child(5) {
-        padding: 0 20px 0;
-        margin-top: -31px;
-    }
+  .milestone__text {
+    white-space: pre-line;
+  }
+  .milestone:nth-child(5) {
+    padding: 0 20px 0;
+    margin-top: -31px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .roadmap__cards {
+    --milestone-number-size: 30px;
+    --milestone-gap: 10px;
+  }
+  .roadmap__cards .milestone {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 }

@@ -1,174 +1,208 @@
 .main {
-    position: relative;
-    mix-blend-mode: multiply;
-    background-size: cover;
-    height: calc(100vh - var(--marquee-height));
-    max-height: 700px;
-    padding-top: 26px;
+  --pawn-shift: 50px;
+  position: relative;
+  height: calc(100vh - var(--marquee-height));
+  max-height: 700px;
+  min-height: 600px;
+  padding-top: 26px;
+  background-color: var(--bg-color);
+  background-size: cover;
+  mix-blend-mode: multiply;
 }
 .main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    opacity: .25;
-    background: url("../assets/images/filter.png") no-repeat center center;
-    background-size: cover;
-    background-blend-mode: multiply;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: var(--filter-bg),
+    url("../assets/images/main-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-blend-mode: color-burn;
 }
 .main::after {
-    content: url("../assets/images/chess.png");
-    background: var(--bg-color);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    mix-blend-mode: multiply;
-    z-index: -1;
+  content: "";
+  background: url("../assets/images/knight.png") no-repeat 73% 100%,
+    url("../assets/images/pawn.png") no-repeat 100% calc(100% - 20px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(50% + var(--pawn-shift));
+  left: 50%;
+  transform: translateX(calc(-50%));
+  width: calc(var(--container-max-width) + var(--pawn-shift));
+  z-index: -1;
 }
 .main__content {
-    margin-top: 62px;
-    max-width: 542px;
+  margin-top: 62px;
+  max-width: 542px;
 }
 .main__headline {
-    text-transform: uppercase;
-    font-size: 60px;
-    line-height: 110%;
-    font-weight: 400;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 110%;
+  font-weight: 400;
 }
-.main__headline_gap-1 {
-    margin-left: 91px;
+.main__headline_gap_m {
+  margin-left: 91px;
 }
-.main__headline_gap-2 {
-    margin-left: 33px;
+.main__headline_gap_s {
+  margin-left: 33px;
 }
 .main__description {
-    text-align: center;
-    font-size: 18px;
-    line-height: 130%;
-    margin: 24px 0 40px 0;
-    font-family: var(--golos-text-font), serif;
+  text-align: center;
+  font-size: 18px;
+  line-height: 130%;
+  margin: 24px 0 40px 0;
+  font-family: var(--golos-text-font), serif;
 }
 .main__buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
 .main__button {
-    font-family: var(--golos-text-font), serif;
-    font-weight: var(--medium);
-    font-size: var(--small-font-size);
-    background: transparent;
-    border: 2px solid var(--darker);
-    padding: 12px 49px;
-    border-radius: 66px;
-    flex: 1;
-    line-height: 130%;
-    transition: var(--button-transition);
-    white-space: pre-line;
+  font-family: var(--golos-text-font), serif;
+  font-weight: var(--medium);
+  font-size: var(--small-font-size);
+  background: transparent;
+  border: 2px solid var(--darker);
+  padding: 15px 49px;
+  border-radius: 66px;
+  flex: 1;
+  line-height: 125%;
+  transition: var(--button-transition);
+  white-space: pre-line; /* использую для pixel perfect */
 }
 .main__button:hover {
-    background: var(--darker);
-    color: #fff;
+  background: var(--darker);
+  color: #fff;
 }
 .main__button_primary {
-    background: var(--darker);
-    color: #fff;
-    border: none;
+  background: var(--darker);
+  color: #fff;
+  border: none;
 }
 .main__button_primary:hover {
-    background: var(--gold);
-    color: var(--darker);
+  background: var(--gold);
+  color: var(--darker);
 }
 .main__button_secondary {
-    color: var(--darker);
+  color: var(--darker);
 }
 
 @media screen and (min-width: 2000px) {
-    .main::after {
-        padding-left: 20%;
-    }
+  .main {
+    background: var(--filter-bg) var(--bg-color);
+    background-blend-mode: color-burn;
+  }
+  .main::before {
+    background-size: 1920px auto;
+  }
 }
 
-@media screen and (max-width: 1440px) {
-    .main::after {
-        left: -20%;
-    }
+@media screen and (max-width: 1122px) {
+  .main__button_secondary {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+  }
+  .main {
+    --pawn-shift: 0px;
+  }
 }
 
-@media screen and (max-width: 1024px) {
-    .main::after {
-        left: -70%;
-    }
-    .main__button_secondary {
-        background: rgba(255, 255, 255, .9);
-        border: none;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .main::after {
-        left: -100%;
-    }
+@media screen and (max-width: 940px) {
+  .main::after {
+    background: url("../assets/images/knight.png") no-repeat right bottom;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .main {
-        min-height: 425px;
-        max-height: 774px;
-        padding-top: 18px;
-    }
-    .main::after {
-        background: url("../assets/images/chess-mobile.png") bottom center no-repeat var(--bg-color);
-        background-size: 100%;
-        content: "";
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: -18px;
-    }
-    .main__logo {
-        width: 213px;
-        height: 32px
-    }
-    .main__content {
-        margin-top: 40px;
-    }
-    .main__headline_gap-1 {
-        margin-left: 64px;
-    }
-    .main__headline_gap-2 {
-        margin-left: 30px;
-    }
-    .main__description {
-        margin: 27px 0 27px 0;
-    }
-    .main__headline {
-        font-size: 36px;
-    }
-    .main__description {
-        text-align: left;
-    }
-    .main__buttons {
-        flex-direction: column;
-        gap: 14px;
-    }
-    .main__button {
-        white-space: unset;
-        padding: 18px 43px;
-        line-height: 16px;
-    }
+  .main::after {
+    background-position: bottom center;
+    width: 100%;
+    right: 0;
+    left: 0;
+    transform: initial;
+    background-size: 120px;
+  }
+  .main::before {
+    background-position: bottom center, 81% 100%;
+    background-size: auto 50%;
+  }
+  .main {
+    background-image: var(--filter-bg);
+    background-blend-mode: color-burn;
+    min-height: 605px;
+    max-height: 774px;
+    padding-top: 18px;
+  }
+  .main__logo {
+    width: 213px;
+    height: 32px;
+  }
+  .main__content {
+    margin-top: 40px;
+  }
+  .main__headline_gap_m {
+    margin-left: 64px;
+  }
+  .main__headline_gap_s {
+    margin-left: 30px;
+  }
+  .main__description {
+    margin: 27px 0 27px 0;
+  }
+  .main__headline {
+    font-size: 48px;
+  }
+  .main__description {
+    text-align: left;
+  }
+  .main__buttons {
+    gap: 14px;
+  }
+  .main__button {
+    white-space: unset;
+    padding: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main__headline {
+    font-size: 40px;
+  }
+  .main__button {
+    white-space: unset;
+    padding: 18px 43px;
+    line-height: 12px;
+  }
+  .main__buttons {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main__headline {
+    font-size: 36px;
+  }
+  .main__description {
+    white-space: pre-line; /* использую для pixel perfect */
+  }
+}
+@media screen and (max-width: 400px) {
+  .main::before {
+    background-position: bottom center, 75% 100%;
+  }
 }
 
-@media screen and (max-width: 374px) {
-    .main__headline_gap-1 {
-        margin-left: 40px;
-    }
-    .main__headline_gap-2 {
-        margin-left: 20px;
-    }
+@media screen and (max-width: 370px) {
+  .main__headline, .title {
+    font-size: 28px;
+  }
+  .main__headline_gap_m, .main__headline_gap_s {
+    margin-left: 0;
+  }
 }

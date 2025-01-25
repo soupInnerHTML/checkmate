@@ -1,0 +1,119 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.animated {
+    animation-play-state: paused;
+    opacity: 0;
+}
+
+.animated_visible {
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+
+.animated_fade_in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+.animated_fade_out {
+    animation-name: fadeOut;
+    animation-duration: 1s;
+}
+
+.animated_delay_250 {
+    animation-delay: 250ms;
+}
+.animated_delay_500 {
+    animation-delay: 500ms;
+}
+.animated_delay_750 {
+    animation-delay: 750ms;
+}
+.animated_delay_1000 {
+    animation-delay: 1000ms;
+}
+.animated_delay_1250 {
+    animation-delay: 1250ms;
+}
+.animated_delay_1500 {
+    animation-delay: 1500ms;
+}
+.animated_delay_1750 {
+    animation-delay: 1750ms;
+}
+.animated_delay_2000 {
+    animation-delay: 2000ms;
+}
+
+@media screen and (max-width: 1023px) {
+    .animated_tablet_delay_250 {
+        animation-delay: 250ms;
+    }
+    .animated_tablet_delay_500 {
+        animation-delay: 500ms;
+    }
+    .animated_tablet_delay_750 {
+        animation-delay: 750ms;
+    }
+    .animated_tablet_delay_1000 {
+        animation-delay: 1000ms;
+    }
+    .animated_tablet_delay_1250 {
+        animation-delay: 1250ms;
+    }
+    .animated_tablet_delay_1500 {
+        animation-delay: 1500ms;
+    }
+    .animated_tablet_delay_1750 {
+        animation-delay: 1750ms;
+    }
+    .animated_tablet_delay_2000 {
+        animation-delay: 2000ms;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .animated_mobile_delay_250 {
+        animation-delay: 250ms;
+    }
+    .animated_mobile_delay_500 {
+        animation-delay: 500ms;
+    }
+    .animated_mobile_delay_750 {
+        animation-delay: 750ms;
+    }
+    .animated_mobile_delay_1000 {
+        animation-delay: 1000ms;
+    }
+    .animated_mobile_delay_1250 {
+        animation-delay: 1250ms;
+    }
+    .animated_mobile_delay_1500 {
+        animation-delay: 1500ms;
+    }
+    .animated_mobile_delay_1750 {
+        animation-delay: 1750ms;
+    }
+    .animated_mobile_delay_2000 {
+        animation-delay: 2000ms;
+    }
+}
+
+.animated_none, .animated_none_internal_use_only {
+    animation: none;
+    opacity: 1;
+}

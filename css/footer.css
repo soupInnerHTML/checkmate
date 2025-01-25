@@ -1,11 +1,11 @@
 .footer {
-    background: var(--bg-color);
-    padding: 40px 0  72px 0;
-    width: 100vw;
+  background: var(--bg-color);
+  padding: 40px 0 72px 0;
+  width: 100vw;
 }
 .footer__note {
-    font-size: var(--small-font-size);
-    line-height: 120%;
-    opacity: .6;
-    font-family: var(--golos-text-font), serif;
+  font-size: var(--small-font-size);
+  line-height: var(--default-line-height);
+  opacity: 0.6;
+  font-family: var(--golos-text-font), serif;
 }
